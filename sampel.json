@@ -1,0 +1,28 @@
+{
+  "fromConfiguration" : {
+      "sensorName" : {
+        "type" : "String",
+        "description" : "Enter sensorName",
+        "label":"Model Number",
+        "required":true
+      },
+      "sensorDescription" : {
+        "type" : "String",
+        "description" : "Enter sensorDescription",
+        "label":"Registration Number",
+        "required":false
+      },
+      "latitude" : {
+        "type" : "Number",
+        "description" : "Enter latitude",
+        "label":"latitude",
+        "required":false
+      },
+      "longitude" : {
+        "type" : "Number",
+        "description" : "Enter longitude",
+        "label":"longitude",
+        "required":false
+      }
+    }
+}

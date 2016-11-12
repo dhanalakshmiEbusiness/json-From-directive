@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+    <h2>Isolate Scope with Event</h2>
+
+    <!--here in action we can pass any parameter which can change the scope of the directive-->
+    <isolate-scope-with-event datasource="customer" action="changeData()">
+    </isolate-scope-with-event>
+
+</div>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+        $scope.customer = {
+            name: 'David',
+            street: '1234 Anywhere St.'
+        };
+        $scope.changeData = function () {
+
+            $scope.customer = {
+                name: 'dl',
+                street:  'dl'
+            };
+        };
+    });
+
+    app.directive('isolateScopeWithEvent', function() {
+        return{
+            scope: {
+                datasource: '=',
+                action: '&'
+            },
+            template: 'Name: {{datasource.name}} Street: {{datasource.street}} ' +
+            '<button ng-click="action()">Change Data</button>'
+        }
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,228 @@
+.form {
+    /*max-width: 700px;*/
+    font-family: robotolight;
+}
+
+.form li {
+    margin-bottom: 25px;
+    box-sizing: border-box;
+}
+
+.form.normal li {
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form li:last-of-type {
+    /*margin-bottom: 0;*/
+}
+
+.form.flow {
+}
+
+.form.flow li {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+}
+.form.flow li.big {
+    margin-bottom: 0;
+    width: 100%;
+}
+.form.flow li.big .form{
+    margin: 0 15px;
+}
+.form.flow li .inputBox {
+    /*padding-right: 25px;*/
+}
+
+.form.flow li:nth-of-type(odd) {
+    padding-right: 25px;
+}
+
+.form.flow li:nth-of-type(even) {
+    padding-left: 25px;
+    margin-left: -5px;
+}
+.form.dynamic.flow li:nth-of-type(even) {
+    margin-left: 0;
+}
+
+
+.form li input[type="text"],
+.form li input[type="password"],
+.form li input[type="number"],
+.form li input[type="url"],
+.form li textarea {
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 20px;
+    border: none;
+    height: 46px;
+    line-height: 46px;
+    color: #ffffff;
+    background: #3c445b;
+    /*border-bottom: 2px solid #2b3041;*/
+    font-size: 16px;
+}
+
+.form li label {
+    cursor: pointer;
+}
+
+.upload{
+    height: 46px;
+    position: relative;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+.upload input[type="file"]{
+    width: 100%;
+    display: block;
+    height: 46px;
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+}
+.upload .mask{
+    background: #3c445b url("../images/Upload_icon.png") no-repeat;
+    background-position: right 19px center;
+    background-size: 20px;
+    box-sizing: border-box;
+    color: #ffffff;
+    left: 0;
+    line-height: 50px;
+    overflow: hidden;
+    padding: 0 52px 0 20px;
+    position: absolute;
+    /*text-align: center;*/
+    text-overflow: ellipsis;
+    top: 0;
+    white-space: nowrap;
+    width: 100%;
+    z-index: 1;
+
+}
+
+.form li .upload {
+    border-bottom: 2px solid #2b3041;
+}
+
+
+.form.normal {
+    width: 400px;
+}
+
+.form.normal li input[type="text"],
+.form.normal li input[type="number"],
+.form.normal li input[type="password"],
+.form.normal li textarea {
+    width: 100%;
+}
+
+.form li input.full {
+    width: 510px;
+}
+
+.form li select {
+    background: #3c445b url('../images/arrow_down_white.png') no-repeat center right 12px;
+    background-size: 14px;
+    border: medium none;
+    box-sizing: border-box;
+    height: 46px;
+    outline: medium none;
+    padding: 0 20px;
+    width: 100%;
+    position: relative;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+.form li select option{
+    background: #1d202f;
+    border: medium none;
+    outline: medium none;
+    padding: 11px 20px;
+    position: relative;
+}
+.form li select option:hover{
+    background: #1d202f;
+}
+.form li .tag {
+    font-family: robotoregular;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+.form li .tag.main{
+    border-bottom: 1px solid #505b79;
+    font-size: 15px;
+    padding: 12px 0;
+    margin: 0 15px 10px 15px;
+}
+.form li .description {
+    /*text-align: right;*/
+    color: #939fc0;
+    font-size: 13px;
+    margin-top: 7px;
+}
+
+.form li .dropDown,
+.form li .multiSelect {
+    width: 100%;
+}
+
+.form li .dropDown .head {
+    border-bottom: 2px solid #2b3041;
+}
+
+.form li .dropDown .list li,
+.form li .multiSelect .list li {
+    float: none;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.form li .addElement {
+    width: 40px;
+    line-height: 40px;
+    background: #7a3b80;
+    text-align: center;
+    color: #ffffff;
+}
+
+.form li textarea {
+    /*width: 505px;*/
+    font-family: robotolight;
+    height: 70px;
+    resize: none;
+    line-height: 30px;
+}
+.form li textarea[readonly] {
+    color: transparent;
+    text-shadow: 0 0 0 rgba(255, 255, 255, 0.45);
+}
+.form li textarea.big {
+    height: 400px;
+}
+
+.form.normal .btn.full {
+    width: 100%;
+    color: #ffffff;
+    padding: 9px 0;
+    cursor: pointer;
+    background: #4593d1;
+    text-align: center;
+    font-size: 15px;
+    -webkit-transition: background 200ms ease;
+    -moz-transition: background 200ms ease;
+    -ms-transition: background 200ms ease;
+    -o-transition: background 200ms ease;
+    transition: background 200ms ease;
+}
+
+.form.normal .btn.full:hover {
+    background: #3878ab;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+    <h2>Isolate Scope with Event</h2>
+
+    <!--here in action we can pass any parameter which can change the scope of the directive-->
+
+
+</div>
+<div elem-ready="someMethod()"></div>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+        $scope.customer = {
+            name: 'David',
+            street: '1234 Anywhere St.'
+        };
+        $scope.changeData = function () {
+
+            $scope.customer = {
+                name: 'dl',
+                street:  'dl'
+            };
+        };
+    });
+    app .directive( 'elemReady', function( $parse ) {
+        return {
+            restrict: 'A',
+            link: function( $scope, elem, attrs ) {
+                elem.ready(function(){
+                    $scope.$apply(function(){
+                        var func = $parse(attrs.elemReady);
+                        func($scope);
+                    })
+                })
+            }
+        }
+    })
+
+</script>
+
+</body>
+</html>

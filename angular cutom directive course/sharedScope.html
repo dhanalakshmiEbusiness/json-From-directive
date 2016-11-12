@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+    <isolated-scope name="{{first}}" ></isolated-scope>
+   <!-- <isolated-scope name="{{name}}" ></isolated-scope>-->
+
+</div>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+        //we pass the entrie object also
+        $scope.name={
+            firstName:"sammu"
+        }
+        $scope.first="sam";
+    });
+
+    app.directive('isolatedScope', function() {
+        return{
+            scope:{name :'@'},
+            template:'name:{{name}}'
+        }
+    });
+</script>
+
+</body>
+</html>

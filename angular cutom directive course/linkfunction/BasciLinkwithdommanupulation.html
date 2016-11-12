@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" >
+    <div link-demo>Click Me!</div>
+
+</div>
+
+<script>
+    var app = angular.module('myApp', []);
+
+    app.directive('linkDemo', function() {
+        return{
+            restrict: 'A',
+            link: function(scope, elem, attrs) {
+                console.log("*******************")
+                console.log(attrs)
+                elem.on('click', function() {
+                    elem.html('You clicked me'+attrs.id);
+                });
+
+            }
+        }
+    });
+
+</script>
+
+</body>
+</html>
